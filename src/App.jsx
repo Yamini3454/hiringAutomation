@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as HashRouter,Router, Routes, Route, Navigate } from "react-router-dom";
 import Games from "./pages/Games";
 import Minesweeper from "./pages/Minesweeper";
 import UnblockMe from "./pages/UnblockMe";
@@ -13,34 +13,36 @@ import "./index.css"; // Tailwind import
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Routes>
-          {/* Home */}
-          <Route path="/" element={<Home />} />
+    <HashRouter>
+      <Router>
+        <div className="min-h-screen flex flex-col">
+          <Routes>
+            {/* Home */}
+            <Route path="/" element={<Home />} />
 
-          {/* Auth */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+            {/* Auth */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-          {/* Games hub */}
-          <Route path="/games" element={<Games />} />
+            {/* Games hub */}
+            <Route path="/games" element={<Games />} />
 
-          {/* Minesweeper */}
-          <Route path="/games/minesweeper" element={<Minesweeper />} />
+            {/* Minesweeper */}
+            <Route path="/games/minesweeper" element={<Minesweeper />} />
 
-          {/* UnblockMe game flow */}
-          <Route path="/games/unblockme" element={<PuzzleList />} />
-          <Route path="/games/unblockme/:id" element={<UnblockMe />} />
+            {/* UnblockMe game flow */}
+            <Route path="/games/unblockme" element={<PuzzleList />} />
+            <Route path="/games/unblockme/:id" element={<UnblockMe />} />
 
-          {/* Water Level */}
-          <Route path="/games/waterlevel" element={<WaterLevel />} />
+            {/* Water Level */}
+            <Route path="/games/waterlevel" element={<WaterLevel />} />
 
-          {/* Catch-all */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-    </Router>
+            {/* Catch-all */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+      </Router>
+    </HashRouter>
   );
 }
 
