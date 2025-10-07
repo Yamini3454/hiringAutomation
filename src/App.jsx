@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter as HashRouter,Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Games from "./pages/Games";
 import Minesweeper from "./pages/Minesweeper";
 import UnblockMe from "./pages/UnblockMe";
@@ -13,7 +13,6 @@ import "./index.css"; // Tailwind import
 
 function App() {
   return (
-    <HashRouter>
       <Router>
         <div className="min-h-screen flex flex-col">
           <Routes>
@@ -42,7 +41,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </HashRouter>
   );
 }
 
